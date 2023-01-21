@@ -5,42 +5,6 @@ import localFont from "@next/font/local";
 import { allPosts, Post } from "@/.contentlayer/generated";
 import { InferGetStaticPropsType } from "next";
 
-const SfProDisplayFont = localFont({
-  src: [
-    {
-      path: "../public/fonts/SF-Pro-Display-Black.woff2",
-      weight: "900",
-    },
-    {
-      path: "../public/fonts/SF-Pro-Display-Bold.woff2",
-      weight: "700",
-    },
-    {
-      path: "../public/fonts/SF-Pro-Display-Medium.woff2",
-      weight: "500",
-    },
-  ],
-  variable: "--font-sfpro-display",
-});
-
-const SfProTextFont = localFont({
-  src: [
-    {
-      path: "../public/fonts/SF-Pro-Text-Bold.woff2",
-      weight: "700",
-    },
-    {
-      path: "../public/fonts/SF-Pro-Text-Medium.woff2",
-      weight: "500",
-    },
-    {
-      path: "../public/fonts/SF-Pro-Text-Light.woff2",
-      weight: "200",
-    },
-  ],
-  variable: "--font-sfpro-text",
-});
-
 function PostCard(post: Post) {
   return (
     <div className="flex flex-col body-16">
@@ -48,7 +12,7 @@ function PostCard(post: Post) {
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
       <h2 className="text-lg">
-        <Link href={post.url} className="text-blue-700 hover:text-blue-900">
+        <Link href={post.url} className="text-blue-700 hover:text-blue-900 ">
           {post.title}
         </Link>
       </h2>
@@ -60,17 +24,17 @@ export default function Home({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div className={`${SfProDisplayFont.variable} ${SfProTextFont.variable}`}>
+    <main className="w-full h-full">
       <Head>
         <title>Contentlayer Blog Example</title>
       </Head>
 
-      <h1 className="title-26">Contentlayer Blog Example</h1>
+      {/* <h1 className="title-26">Contentlayer Blog Example</h1> */}
 
-      {posts.map((post, idx) => (
+      {/* {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
-      ))}
-    </div>
+      ))} */}
+    </main>
   );
 }
 
