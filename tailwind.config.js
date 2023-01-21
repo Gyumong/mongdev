@@ -9,6 +9,9 @@ module.exports = {
   jit: true,
   theme: {
     extend: {
+      screens: {
+        mobile: { max: "480px" },
+      },
       fontFamily: {
         "Sf-display": [
           "var(--font-sfpro-display)",
