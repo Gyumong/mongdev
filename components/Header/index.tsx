@@ -10,11 +10,14 @@ const Header: FC = () => {
         "left-0",
         "z-50",
         "w-full",
-        "h-24",
-        "page-padding"
+        "h-[100px]",
+        "mobile:h-[60px]",
+        "bg-white"
       )}
     >
-      <div className="title-22">Mong</div>
+      <nav className="flex h-[60px] page-padding w-full items-center">
+        <div className="title-22">Mong</div>
+      </nav>
     </header>
   );
 };

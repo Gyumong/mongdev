@@ -23,18 +23,19 @@ function PostCard(post: Post) {
 export default function Home({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log('posts',posts)
   return (
-    <main className="w-full h-full">
+    <artice>
       <Head>
         <title>Contentlayer Blog Example</title>
       </Head>
 
-      {/* <h1 className="title-26">Contentlayer Blog Example</h1> */}
+      <h1 className="title-26">Contentlayer Blog Example</h1>
 
-      {/* {posts.map((post, idx) => (
+      {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
-      ))} */}
-    </main>
+      ))}
+    </artice>
   );
 }
 
