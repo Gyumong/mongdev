@@ -1,41 +1,21 @@
-import Head from "next/head";
-import Link from "next/link";
-import { compareDesc, format, parseISO } from "date-fns";
-import localFont from "@next/font/local";
-import { allPosts, Post } from "@/.contentlayer/generated";
+import { allPosts } from "@/.contentlayer/generated";
+import PostCard from "@/components/Post/PostCard";
+import { compareDesc } from "date-fns";
 import { InferGetStaticPropsType } from "next";
-
-function PostCard(post: Post) {
-  return (
-    <div className="flex flex-col body-16">
-      <time dateTime={post.date} className="text-sm text-slate-600">
-        {format(parseISO(post.date), "LLLL d, yyyy")}
-      </time>
-      <h2 className="text-lg">
-        <Link href={post.url} className="text-blue-700 hover:text-blue-900 ">
-          {post.title}
-        </Link>
-      </h2>
-    </div>
-  );
-}
+import Head from "next/head";
 
 export default function Home({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log('posts',posts)
   return (
-    <artice>
+    <article>
       <Head>
         <title>Contentlayer Blog Example</title>
       </Head>
-
-      <h1 className="title-26">Contentlayer Blog Example</h1>
-
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
-    </artice>
+    </article>
   );
 }
 
