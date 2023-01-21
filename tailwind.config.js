@@ -16,11 +16,34 @@ module.exports = {
         ],
         "Sf-text": ["var(--font-sfpro-text)", ...defaultTheme.fontFamily.sans],
       },
+      height: {
+        fullScreen: "calc(100vh - 52px)",
+      },
+      padding: {
+        "mobile-env": "env(safe-area-inset-bottom)",
+        "mobile-constant": "constant(safe-area-inset-bottom)",
+      },
+      margin: {
+        "mobile-env": "env(safe-area-inset-bottom)",
+        "mobile-constant": "constant(safe-area-inset-bottom)",
+      },
     },
   },
   plugins: [
     plugin(({ addComponents }) => {
       addComponents({
+        ".page-padding": {
+          paddingLeft: "16px",
+          paddingRight: "16px",
+          ["@media (min-width: 320px)"]: {
+            paddingLeft: "18px",
+            paddingRight: "18px",
+          },
+          ["@media (min-width: 376px)"]: {
+            paddingLeft: "20px",
+            paddingRight: "20px",
+          },
+        },
         ".body-14": {
           fontFamily: "Sf-text",
           fontSize: "0.875rem",
