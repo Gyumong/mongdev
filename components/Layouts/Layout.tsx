@@ -41,7 +41,7 @@ const SfProTextFont = localFont({
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <main
-      className={`${SfProDisplayFont.variable} ${SfProTextFont.variable} h-fullScreen m-mobile-env p-mobile-env flex flex-col`}
+      className={`${SfProDisplayFont.variable} ${SfProTextFont.variable} h-[100vh] m-mobile-env p-mobile-env flex flex-col bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100`}
     >
       <Header />
       <section className="w-full h-full page-padding mobile:mt-[60px] mt-[100px]">
